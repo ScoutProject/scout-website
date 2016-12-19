@@ -8,6 +8,7 @@ include_once "../php/checkLogin.php";
 		<title>Scout</title>
 		<?php include '../includes/head.php' ?>
 		<link rel="stylesheet" href="/css/home.css" />
+		<script src="/js/snowstorm.min.js"></script>
 	</head>
 	<body>
 		<?php include '../includes/modals.php' ?>
