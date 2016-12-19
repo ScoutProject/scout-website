@@ -1,0 +1,18 @@
+# Error Documents
+ErrorDocument 401 /errors/401.php
+ErrorDocument 404 /errors/404.php
+ErrorDocument 403 /errors/403.php
+ErrorDocument 500 /errors/500.php
+
+Options -Indexes
+
+# Rewrites
+RewriteEngine On
+# Home page
+RewriteRule   ^$                    /pages/dashboard.php
+# First level pages
+RewriteRule   ^([A-Za-z0-9-]+)/$    /pages/$1.php                [NC]
+
+# Pesky trailing slashes
+RewriteCond   %{REQUEST_URI}        !(/$|\.)
+RewriteRule   (.*)                  %{REQUEST_URI}/              [R=301,L]

@@ -1,0 +1,141 @@
+main {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	align-items:flex-start;
+	padding:20px 0;
+}
+
+#loginForm,
+#signupForm {
+	width:300px;
+	margin:20px;
+	border-radius:2px;
+	background-color:#FFF;
+	box-sizing:border-box;
+	display:inline-block;
+}
+#loginForm label,
+#signupForm label {
+	display:block;
+	padding:5px 20px 0 20px;
+	color:#000;
+}
+#loginForm label[for=loginFormRememberMe] {
+	display:inline;
+	padding:15px 20px 0 5px;
+	font-size:14px;
+	cursor:pointer;
+}
+#loginForm input,
+#signupForm input {
+	margin:0 20px;
+	box-sizing:border-box;
+	width:100%;
+	width:calc(100% - 40px);
+	font-family:inherit;
+	font-size:14px;
+	border:1px solid #e1e1e1;
+	border-radius:3px;
+	padding:5px 8px;
+	transition:background-color 0.2s;
+}
+#loginForm input[type=checkbox] {
+	margin:15px 0 0 20px;
+	width:auto;
+	cursor:pointer;
+}
+#loginForm input:focus,
+#signupForm input:focus {
+	background-color:#E0F2F1;
+}
+#loginForm button,
+#signupForm button {
+	background-color:#009688;
+	color:#FFF;
+	border:none;
+	border-radius:3px;
+	padding:10px 0;
+	font-weight:bold;
+	font-family:inherit;
+	font-size:16px;
+	margin:20px 0;
+	min-width:240px;
+	display:inline-block;
+	cursor:pointer;
+	text-align:center;
+	transition:all 0.2s;
+}
+#loginForm button:hover,
+#signupForm button:hover {
+	box-shadow:0px 2px 0px rgba(0,0,0,.3);
+}
+#loginForm #loginFormForgotPassword {
+	font-size:14px;
+	text-decoration:none;
+	color:#4DB6AC;
+	font-weight:bold;
+	padding:0 20px;
+	margin-top:15px;
+	display:block;
+	opacity:0.8;
+}
+#loginForm #loginFormForgotPassword:hover {
+	opacity:1;
+}
+.formHeader {
+	background-color:#009688;
+	width:100%;
+	font-weight:bold;
+	font-size:30px;
+	text-align:center;
+	color:#FFF;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+	padding:15px 0;
+	position:relative;
+}
+
+#login_status {
+	position:fixed;
+	background-color:#CCC;
+	padding:10px 50px 10px 15px;
+	z-index:1500;
+	border-radius:3px;
+	min-width:400px;
+	box-sizing:border-box;
+	min-height:43px;
+	box-shadow:0 2px 4px rgba(0,0,0,.5);
+	top:50px;
+}
+@media (max-width: 500px) {
+	#login_status {
+		min-width:100%;
+		width:100%;
+		border-radius:0;
+	}
+}
+#login_status.error {
+	background-color:#E57373;
+}
+#login_status.success {
+	background-color:#81C784;
+}
+#login_status a {
+	position:absolute;
+	right:0;
+	height:43px;
+	width:43px;
+	text-decoration:none;
+	top:0;
+	line-height:43px;
+	text-align:center;
+	font-size:30px;
+	font-family:'Roboto Slab', sans-serif;
+	font-weight:bold;
+	color:rgba(0,0,0,.5);
+	transition:color 0.2s;
+}
+#login_status a:hover {
+	color:rgba(0,0,0,.8);
+}

@@ -1,0 +1,129 @@
+main {
+	margin-top:0 !important;
+}
+
+/* Top section */
+#section1 {
+	background-color:#009688;
+	color:#009688;
+	min-height:620px;
+	height:0px;
+}
+#section1 .container {
+	padding:0 30px;
+	box-sizing:border-box;
+}
+#section1 h1 {
+	margin:0;
+	text-align:center;
+	font-size:100px;
+	font-weight:bold;
+	padding-top:180px;
+	font-family:'Roboto Slab', sans-serif;
+	color:#FFF;
+	text-shadow:1px 1px 1px rgba(0,0,0,.2);
+}
+#section1 h2 {
+	margin:0;
+	text-align:center;
+	font-size:24px;
+	font-weight:normal;
+	padding-bottom:40px;
+	color:#FFF;
+	text-shadow:1px 1px 1px rgba(0,0,0,.2);
+}
+@media (max-width: 500px) {
+	#section1 h1 {
+		font-size:60px;
+	}
+	#section1 h2 {
+		font-size:20px;
+	}
+}
+
+.feature .container {
+	padding:100px 30px;
+	box-sizing:border-box;
+}
+
+.feature {
+	box-sizing:border-box;
+	height:0px;
+	min-height:520px;
+}
+.feature h2 {
+	margin:0;
+	font-size:30px;
+	max-width:30%;
+	text-shadow:1px 1px 1px rgba(0,0,0,.2);
+	color:#FFF;
+}
+.feature p {
+	font-size:16px;
+	margin:0;
+	padding:30px 0;
+	max-width:30%;
+	text-shadow:1px 1px 1px rgba(0,0,0,.2);
+	color:#FFF;
+}
+
+@media (max-width: 768px) {
+	.feature .container {
+		padding:50px 15px;
+		text-align:center;
+	}
+	.feature h2 {
+		width:100%;
+		max-width:100%;
+		text-align:center;
+	}
+	.feature p {
+		width:100%;
+		max-width:100%;
+		text-align:center;
+	}
+}
+
+#section2 {
+	background-color:#3F51B5;
+	color:#3F51B5;
+}
+#section2 .container {
+	background-image:url(../res/placeholder.png);
+	background-position:bottom right;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+#section3 {
+	background-color:#263238;
+	color:#263238;
+}
+#section3 .container {
+	background-image:url(../res/placeholder.png);
+	background-position:bottom right;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+#section4 {
+	background-color:#4CAF50;
+	color:#4CAF50;
+}
+#section4 .container {
+	background-image:url(../res/placeholder.png);
+	background-position:bottom right;
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+#section5 {
+	background-color:#1976D2;
+	color:#1976D2;
+}
+#section5 .container {
+	background-image:url(../res/placeholder.png);
+	background-position:bottom right;
+	background-size:contain;
+	background-repeat:no-repeat;
+}

@@ -1,0 +1,38 @@
+main div {
+	width:500px;
+	margin:50px auto;
+	padding:20px;
+	border-radius:2px;
+	background-color:#FFF;
+	box-sizing:border-box;
+}
+@media (max-width: 500px) {
+	main div {
+		width:100%;
+		margin:0;
+	}
+}
+h1 {
+	text-align:center;
+	margin:0;
+	padding-bottom:10px;
+}
+main div a {
+	text-decoration:none;
+	font-weight:bold;
+	color:#009688;
+	transition:color 0.2s;
+}
+main div a:hover {
+	color:#4DB6AC;
+}
+main div svg {
+	display:block;
+	width:100px;
+	height:100px;
+	margin:auto;
+	padding-bottom:10px;
+}
+main div svg path {
+	fill:#009688;
+}
