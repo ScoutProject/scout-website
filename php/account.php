@@ -101,6 +101,7 @@ if (isset($_POST['action'])) {
 		$raw_password_repeat = $_POST['passRepeat'];
 
 		$result = callAPI('POST', 'http://api.scoutdev.ga/v1/users/new', array("user" => $username, "email" => $email, "pass" => $raw_password, "passRepeat" => $raw_password_repeat));
+		$result = json_decode($result, true);
 		
 		if (empty($result['status'])) {
 			$cookieData = array("username" => $result['username'], "passHash" => $result['password_hash']);
