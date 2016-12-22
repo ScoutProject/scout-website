@@ -19,7 +19,7 @@
 		</div>
 	</div>
 </form>
-<form method="POST" action="./login/" id="signupModal">
+<form method="POST" action="/login/" id="signupModal">
 	<div>
 		<div class="modalTop">
 			SCOUT
