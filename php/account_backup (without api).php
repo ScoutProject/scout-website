@@ -1,37 +1,4 @@
 <?php
-function callAPI($method, $url, $data = false) {
-    $curl = curl_init();
-
-    switch ($method)
-    {
-        case "POST":
-            curl_setopt($curl, CURLOPT_POST, 1);
-
-            if ($data)
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            break;
-        case "PUT":
-            curl_setopt($curl, CURLOPT_PUT, 1);
-            break;
-        default:
-            if ($data)
-                $url = sprintf("%s?%s", $url, http_build_query($data));
-    }
-
-    // Optional Authentication:
-    //curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    //curl_setopt($curl, CURLOPT_USERPWD, "username:password");
-
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-    $result = curl_exec($curl);
-
-    curl_close($curl);
-
-    return $result;
-}
-
 $status = 'Post not set';
 if (isset($_POST['action'])) {
 	//Login
@@ -99,13 +66,50 @@ if (isset($_POST['action'])) {
 		$email = $_POST['email'];
 		$raw_password = $_POST['pass'];
 		$raw_password_repeat = $_POST['passRepeat'];
+		
+		//Validate username
+		if (!preg_match('/^[A-Za-z0-9-_]{3,45}$/', $username)) {
+			$status = "Error: Username must be longer than 2 characters and shorter than 46 characters, and must only contain letters, numbers, hyphens and underscores.";
+		} else {
+			//Check passwords match
+			if ($raw_password != $raw_password_repeat) {
+				$status = "Error: Passwords must match.";
+			} else {
+				//Vaidate password
+				if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,72}$/', $raw_password)) {
+					$status = "Error: Password must be longer than 7 characters, and must only contain at least one lowercase letter, one uppercase letter and one number.";
+				} else {
+					//Validate email
+					if (filter_var(strtolower(trim($email)), FILTER_VALIDATE_EMAIL) === false) {
+						$status = "Error: Email address is not valid.";
+					} else {
+						//Connect to the database
+						include_once '../php/database.php';
 
-		$result = callAPI('POST', 'http://api.scoutdev.ga/v1/users/new', array("user" => $username, "email" => $email, "pass" => $raw_password, "passRepeat" => $raw_password_repeat));
+						$result = mysqli_query($connection, "SELECT username FROM users WHERE UPPER(username)=UPPER('$username')");
+						//If username exists in db already
+						if ($result && mysqli_num_rows($result) > 0) {
+							mysqli_free_result($result);
+							$status = "Error: Username is taken.";
+						} else {
+							//Make the new account
+							$password_hash = password_hash($raw_password, PASSWORD_DEFAULT);
+							if (mysqli_query($connection, "INSERT INTO users (username, password, email, registerDate, originalIp) VALUES ('$username','$password_hash','" . strtolower(trim($email)) . "',NOW(),'" . $_SERVER['REMOTE_ADDR'] . "')")) {
+								$status = "Success: New user created successfully.";
 
-		$cookieData = array("username" => $result['username'], "passHash" => $result['password_hash']);
-		setcookie("scouta", base64_encode(json_encode($cookieData)), time()+864000); //Delete after 10 days
-		//Send them to the home page, which should make a session from the cookie
-		header('Location: /');
-		exit;
+								$cookieData = array("username" => $username, "passHash" => $password_hash);
+								setcookie("scouta", base64_encode(json_encode($cookieData)), time()+864000); //Delete after 10 days
+								//Send them to the home page, which should make a session from the cookie
+								header('Location: /');
+								exit;
+							} else {
+								$status = "Error: SQL error.";
+							}
+						}
+						mysqli_close($connection);
+					}
+				}
+			}
+		}
 	}
 }
