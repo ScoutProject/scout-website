@@ -1,37 +1,39 @@
 <?php
-function callAPI($method, $url, $data = false, $user = false, $pass = false) {
-    $curl = curl_init();
+if (!function_exists("callAPI")) {
+	function callAPI($method, $url, $data = false, $user = false, $pass = false) {
+		$curl = curl_init();
 
-    switch ($method)
-    {
-        case "POST":
-            curl_setopt($curl, CURLOPT_POST, 1);
+		switch ($method)
+		{
+			case "POST":
+				curl_setopt($curl, CURLOPT_POST, 1);
 
-            if ($data)
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            break;
-        case "PUT":
-            curl_setopt($curl, CURLOPT_PUT, 1);
-            break;
-        default:
-            if ($data)
-                $url = sprintf("%s?%s", $url, http_build_query($data));
-    }
+				if ($data)
+					curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+				break;
+			case "PUT":
+				curl_setopt($curl, CURLOPT_PUT, 1);
+				break;
+			default:
+				if ($data)
+					$url = sprintf("%s?%s", $url, http_build_query($data));
+		}
 
-    // Optional Authentication:
-	if ($user && $pass) {
-		curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-		curl_setopt($curl, CURLOPT_USERPWD, "$user:$pass");
+		// Optional Authentication:
+		if ($user && $pass) {
+			curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+			curl_setopt($curl, CURLOPT_USERPWD, "$user:$pass");
+		}
+
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+		$result = curl_exec($curl);
+
+		curl_close($curl);
+
+		return $result;
 	}
-
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-    $result = curl_exec($curl);
-
-    curl_close($curl);
-
-    return $result;
 }
 
 $status = 'Post not set';
