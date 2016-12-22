@@ -8,7 +8,7 @@
 		<input type="text" name="user" id="loginUsernameField" />
 		<label for="loginPasswordField">Password</label>
 		<input type="password" name="pass" id="loginPasswordField" />
-		<input type="checkbox" name="remember" id="loginRememberMe" /><label for="loginRememberMe">Remember Me</label>
+		<!--<input type="checkbox" name="remember" id="loginRememberMe" /><label for="loginRememberMe">Remember Me</label>-->
 		<input type="hidden" name="action" value="login" />
 		<input type="hidden" name="prev_location" value="<?php echo $page; ?>" />
 		<div class="center"><button type="submit">Login</button></div>

@@ -27,7 +27,7 @@ if ($loggedIn) {
 				<input type="text" name="user" id="loginFormUsernameField" value="<?php if (isset($_POST['action']) && $_POST['action'] == 'login') { if (isset($_POST['user'])) { echo $_POST['user']; } } ?>" />
 				<label for="loginFormPasswordField">Password</label>
 				<input type="password" name="pass" id="loginFormPasswordField" />
-				<input type="checkbox" name="remember" value="false" id="loginFormRememberMe" /><label for="loginFormRememberMe">Remember Me</label>
+				<!--<input type="checkbox" name="remember" value="false" id="loginFormRememberMe" /><label for="loginFormRememberMe">Remember Me</label>-->
 				<input type="hidden" name="action" value="login" />
 				<a href="/login/forgot-password/" id="loginFormForgotPassword">Forgot your password?</a>
 				<div class="center"><button type="submit">Login</button></div>
