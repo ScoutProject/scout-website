@@ -15,7 +15,7 @@
 		<a href="/login/forgot-password/" id="loginForgotPassword">Forgot your password?</a>
 		<div class="modalBottom">
 			<span>Don't have an account?</span>
-			<a href="./login/" class="button alt thin" onclick="return signupModal();">Sign up!</a>
+			<a href="/login/" class="button alt thin" onclick="return signupModal();">Sign up!</a>
 		</div>
 	</div>
 </form>
@@ -37,7 +37,7 @@
 		<div class="center"><button type="submit">Sign up</button></div>
 		<div class="modalBottom">
 			<span>Already have an account?</span>
-			<a href="./login/" class="button alt thin" onclick="return loginModal();">Login!</a>
+			<a href="/login/" class="button alt thin" onclick="return loginModal();">Login!</a>
 		</div>
 	</div>
 </form>
