@@ -1,0 +1,107 @@
+main {
+	width:100%;
+}
+#award_scheme_container {
+	width:1170px;
+	margin:40px auto 0 auto;
+	padding-bottom:20px;
+	position:relative;
+	box-sizing:border-box;
+}
+
+.award_scheme_level {
+	border-radius:3px;
+	background-color:#555;
+	color:rgba(255,255,255,.9);
+	margin-bottom:20px;
+	position:relative;
+}
+
+@media screen and (min-width: 1200px) {
+	#award_scheme_container {
+		width:1170px;
+	}
+}
+@media screen and (max-width: 1200px) {
+	#award_scheme_container {
+		width:970px;
+	}
+}
+@media screen and (max-width: 992px) {
+	#award_scheme_container {
+		width:750px;
+		margin:10px auto 0 auto;
+		padding-bottom:0;
+	}
+	.award_scheme_level {
+		margin-bottom:10px;
+	}
+}
+@media screen and (max-width: 768px) {
+	#award_scheme_container {
+		width:100%;
+	}
+	.award_scheme_level {
+		border-radius:0;
+	}
+}
+
+/* Level colours */
+.award_scheme_level.level1 { background-color:#a2600e; }
+.award_scheme_level.level2 { background-color:#fdc635; }
+.award_scheme_level.level3 { background-color:#005827; }
+.award_scheme_level.level4 { background-color:#760206; }
+.award_scheme_level.level5 { background-color:#dd291e; }
+
+.award_scheme_level_title {
+	color:inherit;
+	font-weight:bold;
+	text-decoration:none;
+	font-size:20px;
+	display:block;
+	padding:10px 15px;
+}
+.award_scheme_level_chevron {
+	fill:rgba(255,255,255,.9);
+	position:absolute;
+	right:15px;
+	top:10px;
+	height:24px;
+	width:24px;
+	display:block;
+	pointer-events:none;
+}
+.award_scheme_level.open .award_scheme_level_chevron {
+	transform:rotate(180deg);
+}
+
+.award_scheme_sublevel_container {
+	height:0;
+	overflow:hidden;
+	box-sizing:border-box;
+	background-color:rgba(0,0,0,.2);
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px;
+}
+@media screen and (max-width: 768px) {
+	.award_scheme_sublevel_container {
+		border-bottom-left-radius:0;
+		border-bottom-right-radius:0;
+	}
+}
+.award_scheme_level.open .award_scheme_sublevel_container {
+	height:auto;
+	padding-left:25px;
+	padding-bottom:5px;
+	padding-top:5px;
+}
+.award_scheme_sublevel {
+	text-decoration:none;
+	color:rgba(255,255,255,.9);
+	border-bottom:2px solid transparent;
+	transition:border-bottom 0.2s;
+	display:table;
+}
+.award_scheme_sublevel:hover {
+	border-bottom:2px solid rgba(255,255,255,.5);
+}
