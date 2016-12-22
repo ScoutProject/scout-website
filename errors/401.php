@@ -1,5 +1,4 @@
 <?php
-include_once "../php/account.php";
 include_once "../php/checkLogin.php";
 $page = "/";
 ?>
