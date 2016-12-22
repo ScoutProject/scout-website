@@ -101,11 +101,15 @@ if (isset($_POST['action'])) {
 		$raw_password_repeat = $_POST['passRepeat'];
 
 		$result = callAPI('POST', 'http://api.scoutdev.ga/v1/users/new', array("user" => $username, "email" => $email, "pass" => $raw_password, "passRepeat" => $raw_password_repeat));
-
-		$cookieData = array("username" => $result['username'], "passHash" => $result['password_hash']);
-		setcookie("scouta", base64_encode(json_encode($cookieData)), time()+864000); //Delete after 10 days
-		//Send them to the home page, which should make a session from the cookie
-		header('Location: /');
-		exit;
+		
+		if (empty($result['status'])) {
+			$cookieData = array("username" => $result['username'], "passHash" => $result['password_hash']);
+			setcookie("scouta", base64_encode(json_encode($cookieData)), time()+864000); //Delete after 10 days
+			//Send them to the home page, which should make a session from the cookie
+			header('Location: /');
+			exit;
+		} else {
+			$status = $result['msg'];
+		}
 	}
 }
