@@ -82,6 +82,7 @@ main {
 	background-color:rgba(0,0,0,.2);
 	border-bottom-left-radius:3px;
 	border-bottom-right-radius:3px;
+	box-shadow:inset 0 1px 1px rgba(0,0,0,.1);
 }
 @media screen and (max-width: 768px) {
 	.award_scheme_sublevel_container {
