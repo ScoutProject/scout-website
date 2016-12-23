@@ -13,6 +13,11 @@ RewriteRule   ^$                    /pages/dashboard.php
 # First level pages
 RewriteRule   ^([A-Za-z0-9-]+)/$    /pages/$1.php                [NC]
 
+#Award Scheme pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule  ^award-scheme(.*)\?*$  /pages/award-scheme.php/$1   [QSA]
+
 # Pesky trailing slashes
 RewriteCond   %{REQUEST_URI}        !(/$|\.)
 RewriteRule   (.*)                  %{REQUEST_URI}/              [R=301,L]
