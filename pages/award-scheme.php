@@ -15,6 +15,7 @@ if (isset($request) && $request[0] != "") {
 			include "../errors/404.php";
 			die();
 		}
+		include_once "../php/libs/Parsedown.php"; //To do the markdown parsing
 	} else if (count($request) == 2) {
 		$page = "/award-scheme/" . $request[0] . "/" . $request[1] . "/";
 		$pageType = "sublevel";
@@ -125,7 +126,14 @@ if (isset($request) && $request[0] != "") {
 					<a href="/award-scheme/<?php echo preg_replace("/[\s]/", "-", strtolower($badge['level'])); ?>/<?php echo preg_replace("/[\s]/", "-", strtolower($badge['sublevel'])); ?>/<?php echo preg_replace("/[\s]/", "-", strtolower($badge['name'])); ?>/" id="award_scheme_navbar_badge"><?php echo $badge['name']; ?></a>
 				</div>
 				<div id="award_scheme_content">
-					Badge contents
+					<div id="badge_md">
+						<?php
+						$Parsedown = new Parsedown();
+						echo $Parsedown
+							->setBreaksEnabled(true)
+							->text($badge['data']);
+						?>
+					</div>
 				</div>
 				<?php
 				}
