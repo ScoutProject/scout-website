@@ -31,7 +31,7 @@ include_once "../php/checkLogin.php";
 			<section id="section2" class="feature">
 				<div class="container">
 					<h2>Award Scheme</h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
+					<p>View any badge from any level of scouting right from your phone or computer.</p>
 					<a href="/award-scheme/" class="button">View the Scheme Now</a><br>
 					<a href="/about/" class="button alt">About Scouts Australia</a>
 				</div>
@@ -39,15 +39,23 @@ include_once "../php/checkLogin.php";
 			<section id="section3" class="feature">
 				<div class="container">
 					<h2>Progress Tracker</h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
-					<a href="/progress-tracker/" class="button">Features</a>
+					<p>Keep track of your badges, share, and coordinate with other scouts.</p>
+					<?php if ($loggedIn) { ?>
+						<a href="/progress-tracker/" class="button">Manage my Badges</a>
+					<?php } else { ?>
+						<a href="/progress-tracker/" class="button">Features</a>
+					<?php } ?>
 				</div>
 			</section>
 			<section id="section4" class="feature">
 				<div class="container">
 					<h2>Group Schedules</h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
-					<a href="/schedule/" class="button">View the Demo</a><br>
+					<p>Easily keep track of your group schedule, without the hassle.</p>
+					<?php if ($loggedIn) { ?>
+						<a href="/schedule/" class="button">View your Schedule</a>
+					<?php } else { ?>
+						<a href="/schedule/" class="button">View the Demo</a>
+					<?php } ?>
 				</div>
 			</section>
 			<section id="section5" class="feature">
