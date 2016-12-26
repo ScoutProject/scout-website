@@ -287,3 +287,165 @@ main {
 	font-size:16px;
 	display:block;
 }
+
+
+
+#progress_item_list {
+	max-height:400px;
+	overflow-y:auto;
+}
+@media screen and (max-width: 992px) {
+	#progress_item_list {
+		max-height:initial;
+	}
+}
+.progress_item {
+	box-sizing:border-box;
+	color:#333;
+	background-color:#EEE;
+	border-radius:3px;
+	margin-bottom:10px;
+}
+.progress_item .progress_item_title {
+	text-decoration:none;
+	color:rgba(255,255,255,.9);
+	background-color:#555;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+	font-weight:bold;
+	display:block;
+	padding:10px 7px;
+	font-size:18px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	box-sizing:border-box;
+}
+.progress_item .progress_item_date {
+	font-size:14px;
+	display:block;
+	color:#666;
+	padding:5px 7px;
+}
+.progress_item .progress_item_description {
+	font-size:16px;
+	display:block;
+	padding:0 7px 5px 7px;
+}
+
+/* Colours */
+.progress_item.red .progress_item_title {
+	background-color:#F44336;
+}
+.progress_item.pink .progress_item_title {
+	background-color:#E91E63;
+}
+.progress_item.purple .progress_item_title {
+	background-color:#9C27B0;
+}
+.progress_item.deep_purple .progress_item_title {
+	background-color:#673AB7;
+}
+.progress_item.indigo .progress_item_title {
+	background-color:#3F51B5;
+}
+.progress_item.blue .progress_item_title {
+	background-color:#2196F3;
+}
+.progress_item.light_blue .progress_item_title {
+	background-color:#03A9F4;
+	color:#000;
+}
+.progress_item.cyan .progress_item_title {
+	background-color:#00BCD4;
+	color:#000;
+}
+.progress_item.teal .progress_item_title {
+	background-color:#009688;
+}
+.progress_item.green .progress_item_title {
+	background-color:#4CAF50;
+	color:#000;
+}
+.progress_item.light_green .progress_item_title {
+	background-color:#8BC34A;
+	color:#000
+}
+.progress_item.lime .progress_item_title {
+	background-color:#CDDC39;
+	color:#000;
+}
+.progress_item.yellow .progress_item_title {
+	background-color:#FFEB3B;
+	color:#000;
+}
+.progress_item.amber .progress_item_title {
+	background-color:#FFC107;
+	color:#000;
+}
+.progress_item.orange .progress_item_title {
+	background-color:#FF9800;
+	color:#000;
+}
+.progress_item.deep_orange .progress_item_title {
+	background-color:#FF5722;
+}
+.progress_item.brown .progress_item_title {
+	background-color:#795548;
+}
+.progress_item.grey .progress_item_title {
+	background-color:#9E9E9E;
+	color:#000;
+}
+.progress_item.blue_grey .progress_item_title {
+	background-color:#607D8B;
+}
+
+.progress_item .progress_item_actions {
+	box-sizing:border-box;
+	border-top:1px solid #CCC;
+	display:flex;
+	height:36px;
+	align-items:center;
+}
+.progress_item .progress_item_action.done {
+	text-decoration:none;
+	color:#000;
+	opacity:0.6;
+	text-transform:uppercase;
+	font-weight:bold;
+	padding:5px 10px;
+	font-size:14px;
+	transition:opacity 0.2s;
+}
+.progress_item .progress_item_action.done:hover {
+	opacity:1;
+}
+.progress_item .progress_item_action.share,
+.progress_item .progress_item_action.star {
+	height:36px;
+	width:36px;
+	fill:#000;
+	opacity:0.6;
+	transition:opacity 0.2s;
+}
+.progress_item .progress_item_action.share svg,
+.progress_item .progress_item_action.star svg {
+	padding:6px;
+}
+.progress_item .progress_item_action.share:hover,
+.progress_item .progress_item_action.star:hover {
+	opacity:1;
+}
+.progress_item .progress_item_action.star .star_unchecked {
+	display:block;
+}
+.progress_item .progress_item_action.star .star_checked {
+	display:none;
+}
+.progress_item .progress_item_action.star.checked .star_checked {
+	display:block;
+}
+.progress_item .progress_item_action.star.checked .star_unchecked {
+	display:none;
+}
