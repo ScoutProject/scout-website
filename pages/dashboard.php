@@ -62,6 +62,43 @@ if (!$loggedIn) {
 				<div class="section awardScheme">
 					<h2>Award Scheme</h2>
 					<h3>Recently Viewed</h3>
+					<div id="awardscheme_viewed_list">
+						<div class="awardscheme_viewed level3">
+							<img class="awardscheme_viewed_image" alt="Badge image" src="/res/badge_example.jpg" />
+							<div class="awardscheme_viewed_text">
+								<a class="awardscheme_viewed_title" href="#">Ipsum Badge</a>
+								<span class="awardscheme_viewed_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
+							</div>
+						</div>
+						<div class="awardscheme_viewed level1">
+							<img class="awardscheme_viewed_image" alt="Badge image" src="/res/badge_example.jpg" />
+							<div class="awardscheme_viewed_text">
+								<a class="awardscheme_viewed_title" href="#">Ipsum Badge</a>
+								<span class="awardscheme_viewed_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
+							</div>
+						</div>
+						<div class="awardscheme_viewed level5">
+							<img class="awardscheme_viewed_image" alt="Badge image" src="/res/badge_example.jpg" />
+							<div class="awardscheme_viewed_text">
+								<a class="awardscheme_viewed_title" href="#">Ipsum Badge</a>
+								<span class="awardscheme_viewed_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
+							</div>
+						</div>
+						<div class="awardscheme_viewed level2">
+							<img class="awardscheme_viewed_image" alt="Badge image" src="/res/badge_example.jpg" />
+							<div class="awardscheme_viewed_text">
+								<a class="awardscheme_viewed_title" href="#">Ipsum Badge</a>
+								<span class="awardscheme_viewed_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
+							</div>
+						</div>
+						<div class="awardscheme_viewed level4">
+							<img class="awardscheme_viewed_image" alt="Badge image" src="/res/badge_example.jpg" />
+							<div class="awardscheme_viewed_text">
+								<a class="awardscheme_viewed_title" href="#">Ipsum Badge with a Really Long Title Thats too Long</a>
+								<span class="awardscheme_viewed_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="section dirk">
 					<h2>Unlimited Dirk</h2>
