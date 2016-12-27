@@ -10,6 +10,21 @@ main {
 	flex-wrap:wrap;
 	justify-content:space-between;
 }
+.dash_nothing_here {
+	padding:5px 7px;
+	box-sizing:border-box;
+	color:#999;
+	text-align:center;
+}
+.dash_nothing_here svg {
+	display:block;
+	margin:0 auto 5px auto;
+	height:40px;
+	width:40px;
+}
+.dash_nothing_here a {
+	color:inherit;
+}
 
 .section {
 	background-color:#FFF;
