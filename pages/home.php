@@ -50,7 +50,7 @@ include_once "../php/checkLogin.php";
 			<section id="section4" class="feature">
 				<div class="container">
 					<h2>Group Schedules</h2>
-					<p>Easily keep track of your group schedule, without the hassle.</p>
+					<p>Forget the termly pdfs. Easily keep track of your group schedule, without the hassle.</p>
 					<?php if ($loggedIn) { ?>
 						<a href="/schedule/" class="button">View your Schedule</a>
 					<?php } else { ?>
@@ -60,9 +60,9 @@ include_once "../php/checkLogin.php";
 			</section>
 			<section id="section5" class="feature">
 				<div class="container">
-					<h2>Unlimited Dirk</h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</p>
-					<a href="/dirkdirk/" class="button">Secret Page</a>
+					<h2>Cloud Safe</h2>
+					<p>All of your schedules, badges and data are kept safe and secure in our cloud.</p>
+					<a href="/status/" class="button">Server Status</a>
 				</div>
 			</section>
 		</main>
