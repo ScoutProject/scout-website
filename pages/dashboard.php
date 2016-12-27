@@ -6,6 +6,18 @@ if (!$loggedIn) {
 	header('Location: /home/');
 	exit;
 }
+
+function truncate($string,$length=100,$append="&hellip;") {
+  $string = trim($string);
+
+  if(strlen($string) > $length) {
+    $string = wordwrap($string, $length);
+    $string = explode("\n", $string, 2);
+    $string = $string[0] . $append;
+  }
+
+  return $string;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -95,41 +107,26 @@ if (!$loggedIn) {
 					<h2>Award Scheme</h2>
 					<h3>Recently Viewed</h3>
 					<div id="awardscheme_viewed_list">
-						<div class="awardscheme_viewed level3">
-							<img class="awardscheme_viewed_image" alt="Badge image" src="/res/badge_example.jpg" />
-							<div class="awardscheme_viewed_text">
-								<a class="awardscheme_viewed_title" href="#" title="Ipsum Badge">Ipsum Badge</a>
-								<span class="awardscheme_viewed_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
+						<?php
+						$user = callAPI('GET', 'http://api.scoutdev.ga/v1/users/' . $_SESSION['id']);
+						$user = json_decode($user, true);
+						
+						$awardSchemeViewed = explode(',', $user['awardschemeViewed']);
+
+						for ($i = 0; $i < count($awardSchemeViewed); $i++) {
+							$curBadge = callAPI('GET', 'http://api.scoutdev.ga/v1/award_scheme/' . $awardSchemeViewed[$i]);
+							$curBadge = json_decode($curBadge, true);
+							?>
+							<div class="awardscheme_viewed level<?php echo $curBadge['level_id']; ?>">
+								<img class="awardscheme_viewed_image" alt="Badge image" src="<?php if ($curBadge['image'] != NULL) { echo $curBadge['image']; } else { echo '/res/badge_placeholder.png'; } ?>" />
+								<div class="awardscheme_viewed_text">
+									<a class="awardscheme_viewed_title" href="/award-scheme/<?php echo preg_replace("/[\s]/", "-", strtolower($curBadge['level'])); ?>/<?php echo preg_replace("/[\s]/", "-", strtolower($curBadge['sublevel'])); ?>/<?php echo preg_replace("/[\s]/", "-", strtolower($curBadge['name'])); ?>/" title="<?php echo $curBadge['name']; ?>"><?php echo $curBadge['name']; ?></a>
+									<span class="awardscheme_viewed_description"><?php echo truncate(preg_replace('/[^a-z0-9.,!& :;\'"]+/i', '', $curBadge['data']), 100); ?></span>
+								</div>
 							</div>
-						</div>
-						<div class="awardscheme_viewed level1">
-							<img class="awardscheme_viewed_image" alt="Badge image" src="/res/badge_example.jpg" />
-							<div class="awardscheme_viewed_text">
-								<a class="awardscheme_viewed_title" href="#" title="Ipsum Badge">Ipsum Badge</a>
-								<span class="awardscheme_viewed_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
-							</div>
-						</div>
-						<div class="awardscheme_viewed level5">
-							<img class="awardscheme_viewed_image" alt="Badge image" src="/res/badge_example.jpg" />
-							<div class="awardscheme_viewed_text">
-								<a class="awardscheme_viewed_title" href="#" title="Ipsum Badge">Ipsum Badge</a>
-								<span class="awardscheme_viewed_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
-							</div>
-						</div>
-						<div class="awardscheme_viewed level2">
-							<img class="awardscheme_viewed_image" alt="Badge image" src="/res/badge_example.jpg" />
-							<div class="awardscheme_viewed_text">
-								<a class="awardscheme_viewed_title" href="#" title="Ipsum Badge">Ipsum Badge</a>
-								<span class="awardscheme_viewed_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
-							</div>
-						</div>
-						<div class="awardscheme_viewed level4">
-							<img class="awardscheme_viewed_image" alt="Badge image" src="/res/badge_example.jpg" />
-							<div class="awardscheme_viewed_text">
-								<a class="awardscheme_viewed_title" href="#" title="Ipsum Badge with a Really Long Title Thats too Long">Ipsum Badge with a Really Long Title Thats too Long</a>
-								<span class="awardscheme_viewed_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
-							</div>
-						</div>
+							<?php
+						}
+						?>
 					</div>
 				</div>
 				<div class="section dirk">
