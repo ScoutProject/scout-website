@@ -128,6 +128,12 @@ if (isset($request) && $request[0] != "") {
 				<div id="award_scheme_content">
 					<div id="badge_md">
 						<?php
+						if ($badge['image'] == NULL) {
+							echo '<div class="center"><img src="/res/badge_placeholder.png" /></div>';
+						} else {
+							echo '<div class="center"><img src="' . $badge['image'] . '" /></div>';
+						}
+						
 						$Parsedown = new Parsedown();
 						echo $Parsedown
 							->setBreaksEnabled(true)

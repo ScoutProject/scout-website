@@ -190,7 +190,6 @@ main {
 	border-bottom:2px solid rgba(0,0,0,.8);
 }
 
-#badge_md img {
-	display:block;
-	margin:0 auto;
+#badge_md .center {
+	padding-top:20px;
 }
