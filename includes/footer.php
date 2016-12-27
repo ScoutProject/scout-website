@@ -4,7 +4,7 @@ if (!$loggedIn) {
 <section id="loggedOutInfo">
 	<div class="container">
 		<h2>What are you waiting for?</h2>
-		<p>With Scout, you can easily manage your <a href="/progress-tracker/">badges</a>, <a href="/schedule/">group schedule</a>, and view the <a href="/award-scheme/">full award scheme</a>. It works on all your devices, including <a href="#">Android</a> and <a href="#">iOS</a>. All for free. Scout is build <em>by</em> scouts, <em>for</em> scouts.</p>
+		<p>With Scout, you can easily manage your <a href="/progress-tracker/">badges</a>, <a href="/schedule/">group schedule</a>, and view the <a href="/award-scheme/">full award scheme</a>. It works on all your devices, including <a href="#">Android</a> and <a href="#">iOS</a>. All for free. Scout is built <em>by</em> scouts, <em>for</em> scouts.</p>
 		<div class="center"><a href="/login/" onclick="return signupModal();" class="button">Get Started!</a></div>
 	</div>
 </section>
