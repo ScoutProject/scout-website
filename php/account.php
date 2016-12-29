@@ -51,7 +51,7 @@ if (isset($_POST['action'])) {
 
 		if (empty($result['status'])) {
 			$cookieData = array("username" => $result['username'], "passHash" => $result['password_hash']);
-			setcookie("scouta", base64_encode(json_encode($cookieData)), time()+864000); //Delete after 10 days
+			setcookie("scouta", base64_encode(json_encode($cookieData)), time()+864000, "/"); //Delete after 10 days
 
 			//Make a session
 			session_start();
@@ -83,7 +83,7 @@ if (isset($_POST['action'])) {
 		
 		if (empty($result['status'])) {
 			$cookieData = array("username" => $result['username'], "passHash" => $result['password_hash']);
-			setcookie("scouta", base64_encode(json_encode($cookieData)), time()+864000); //Delete after 10 days
+			setcookie("scouta", base64_encode(json_encode($cookieData)), time()+864000, "/"); //Delete after 10 days
 			//Send them to the home page, which should make a session from the cookie
 			header('Location: /');
 			exit;

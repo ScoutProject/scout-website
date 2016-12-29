@@ -48,7 +48,7 @@ if (isset($_COOKIE['scouta'])) {
 
 	if (empty($result['status'])) {
 		$cookieData = array("username" => $result['username'], "passHash" => $result['password_hash']);
-		setcookie("scouta", base64_encode(json_encode($cookieData)), time()+864000); //Delete after 10 days
+		setcookie("scouta", base64_encode(json_encode($cookieData)), time()+864000, "/"); //Delete after 10 days
 		
 		$_SESSION['id'] = $result['id'];
 		$_SESSION['user'] = $result['username'];
@@ -57,7 +57,7 @@ if (isset($_COOKIE['scouta'])) {
 		$_SESSION['realName'] = $result['realName'];
 	} else {
 		$status = $result['msg'];
-		setcookie("scouta","gone",time()-1);
+		setcookie("scouta","gone",time()-1,"/");
 	}
 }
 if (isset($_SESSION['user']) && isset($_SESSION['email'])) {
