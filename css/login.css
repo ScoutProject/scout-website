@@ -107,12 +107,16 @@ main {
 	min-height:43px;
 	box-shadow:0 2px 4px rgba(0,0,0,.5);
 	top:50px;
+	left:50%;
+	transform:translateX(-50%);
 }
 @media (max-width: 500px) {
 	#login_status {
 		min-width:100%;
 		width:100%;
 		border-radius:0;
+		left:initial;
+		transform:none;
 	}
 }
 #login_status.error {
