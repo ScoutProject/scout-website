@@ -117,15 +117,18 @@ function truncate($string,$length=100,$append="&hellip;") {
 							for ($i = 0; $i < count($awardSchemeViewed); $i++) {
 								$curBadge = callAPI('GET', 'http://api.scoutdev.ga/v1/award_scheme/' . $awardSchemeViewed[$i]);
 								$curBadge = json_decode($curBadge, true);
-								?>
-								<div class="awardscheme_viewed level<?php echo $curBadge['level_id']; ?>">
-									<img class="awardscheme_viewed_image" alt="Badge image" src="<?php if ($curBadge['image'] != NULL) { echo $curBadge['image']; } else { echo '/res/badge_placeholder.png'; } ?>" />
-									<div class="awardscheme_viewed_text">
-										<a class="awardscheme_viewed_title" href="/award-scheme/<?php echo preg_replace("/[\s]/", "-", strtolower($curBadge['level'])); ?>/<?php echo preg_replace("/[\s]/", "-", strtolower($curBadge['sublevel'])); ?>/<?php echo preg_replace("/[\s]/", "-", strtolower($curBadge['name'])); ?>/" title="<?php echo $curBadge['name']; ?>"><?php echo $curBadge['name']; ?></a>
-										<span class="awardscheme_viewed_description"><?php echo truncate(preg_replace('/[^a-z0-9.,!& :;\'"]+/i', '', $curBadge['data']), 100); ?></span>
+								
+								if (empty($curBadge['status'])) {
+									?>
+									<div class="awardscheme_viewed level<?php echo $curBadge['level_id']; ?>">
+										<img class="awardscheme_viewed_image" alt="Badge image" src="<?php if ($curBadge['image'] != NULL) { echo $curBadge['image']; } else { echo '/res/badge_placeholder.png'; } ?>" />
+										<div class="awardscheme_viewed_text">
+											<a class="awardscheme_viewed_title" href="/award-scheme/<?php echo preg_replace("/[\s]/", "-", strtolower($curBadge['level'])); ?>/<?php echo preg_replace("/[\s]/", "-", strtolower($curBadge['sublevel'])); ?>/<?php echo preg_replace("/[\s]/", "-", strtolower($curBadge['name'])); ?>/" title="<?php echo $curBadge['name']; ?>"><?php echo $curBadge['name']; ?></a>
+											<span class="awardscheme_viewed_description"><?php echo truncate(preg_replace('/[^a-z0-9.,!& :;\'"]+/i', '', $curBadge['data']), 100); ?></span>
+										</div>
 									</div>
-								</div>
-								<?php
+									<?php
+								}
 							}
 						} else {
 						?>
