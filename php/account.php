@@ -12,7 +12,10 @@ if (!function_exists("callAPI")) {
 					curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 				break;
 			case "PUT":
-				curl_setopt($curl, CURLOPT_PUT, 1);
+				curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+				
+				if ($data)
+					curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
 				break;
 			default:
 				if ($data)
@@ -54,6 +57,7 @@ if (isset($_POST['action'])) {
 			session_start();
 			$_SESSION['id'] = $result['id'];
 			$_SESSION['user'] = $result['username'];
+			$_SESSION['passHash'] = $result['password_hash'];
 			$_SESSION['email'] = $result['email'];
 			$_SESSION['realName'] = $result['realName'];
 			if (isset($_POST['prev_location']) && $_POST['prev_location'] != "/home/") {

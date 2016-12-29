@@ -12,7 +12,10 @@ if (!function_exists("callAPI")) {
 					curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 				break;
 			case "PUT":
-				curl_setopt($curl, CURLOPT_PUT, 1);
+				curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+				
+				if ($data)
+					curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
 				break;
 			default:
 				if ($data)
@@ -49,6 +52,7 @@ if (isset($_COOKIE['scouta'])) {
 		
 		$_SESSION['id'] = $result['id'];
 		$_SESSION['user'] = $result['username'];
+		$_SESSION['passHash'] = $result['password_hash'];
 		$_SESSION['email'] = $result['email'];
 		$_SESSION['realName'] = $result['realName'];
 	} else {
