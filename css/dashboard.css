@@ -417,7 +417,6 @@ main {
 }
 
 .progress_item .progress_item_actions {
-	box-sizing:border-box;
 	border-top:1px solid #CCC;
 	display:flex;
 	height:36px;
@@ -436,31 +435,32 @@ main {
 .progress_item .progress_item_action.done:hover {
 	opacity:1;
 }
-.progress_item .progress_item_action.share,
-.progress_item .progress_item_action.star {
+.progress_item .progress_item_action.share {
 	height:36px;
 	width:36px;
 	fill:#000;
-	opacity:0.6;
+	opacity:.6;
 	transition:opacity 0.2s;
 }
-.progress_item .progress_item_action.share svg,
-.progress_item .progress_item_action.star svg {
+.progress_item .progress_item_action.star {
+	height:36px;
+	width:36px;
+	background-image:url('../res/star_anim.png');
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	background-size:auto 36px;
+	transition:opacity 0.2s;
+	opacity:0.6;
+}
+.progress_item .progress_item_action.star.checked {
+	background-position:-1116px 0;
+	transition:background-position 1s steps(31);
+	opacity:1;
+}
+.progress_item .progress_item_action.share svg {
 	padding:6px;
 }
 .progress_item .progress_item_action.share:hover,
 .progress_item .progress_item_action.star:hover {
 	opacity:1;
-}
-.progress_item .progress_item_action.star .star_unchecked {
-	display:block;
-}
-.progress_item .progress_item_action.star .star_checked {
-	display:none;
-}
-.progress_item .progress_item_action.star.checked .star_checked {
-	display:block;
-}
-.progress_item .progress_item_action.star.checked .star_unchecked {
-	display:none;
 }
