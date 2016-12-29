@@ -128,6 +128,7 @@ if (isset($request) && $request[0] != "") {
 				<div id="award_scheme_content">
 					<div id="badge_md">
 						<?php
+						callAPI('PUT', 'http://api.scoutdev.ga/v1/users/' . $_SESSION['id'], array("awardschemeViewed" => $badge['id']), $_SESSION['user'], $_SESSION['passHash']);
 						if ($badge['image'] == NULL) {
 							echo '<div class="center"><img src="/res/badge_placeholder.png" /></div>';
 						} else {
