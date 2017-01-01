@@ -4,8 +4,9 @@
 		<div id="navItems">
 			<a class="nav_item" href="/award-scheme/">Award Scheme</a>
 			<a class="nav_item" href="/progress-tracker/">Progress Tracker</a>
-			<a class="nav_item" href="/schedule/">Group Schedule</a>
-			<a class="nav_item" href="/dirkdirk/">Unlimited Dirk</a>
+			<a class="nav_item" href="/schedule/">Your Schedule</a>
+			<a class="nav_item" href="/groups/">Your Groups</a>
+			<!--<a class="nav_item" href="/dirkdirk/">Unlimited Dirk</a>-->
 			<span class="flex_spacer"></span>
 			<a id="profile_button" href="/profile/" onclick="return userMenu(event);">
 				<img id="profile_button_picture" src="/res/avatar.png" />
