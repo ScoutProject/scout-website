@@ -32,7 +32,7 @@ function truncate($string,$length=100,$append="&hellip;") {
 			<div id="dash_container">
 				<div class="section progress">
 					<h2>Your Progress</h2>
-					<h3>In Progress</h3>
+					<h3>Not Completed</h3>
 					<div id="progress_item_list">
 						<div class="progress_item red">
 							<a href="#" class="progress_item_title" title="VA Service">VA Service</a>
