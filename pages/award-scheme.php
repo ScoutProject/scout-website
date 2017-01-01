@@ -53,6 +53,10 @@ if (isset($request) && $request[0] != "") {
 		<?php include '../includes/modals.php' ?>
 		<main>
 			<div id="award_scheme_container">
+				<div id="award_scheme_actions">
+					<a href="#" onclick="return closeAll();" id="award_scheme_closeAll" title="Collapse all"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,13H5V11H19V13Z" /></svg></a>
+					<a href="#" onclick="return openAll();" id="award_scheme_openAll" title="Expand all"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg></a>
+				</div>
 				<?php
 				if ($pageType == "scheme") {
 					$result = callAPI('GET', 'http://api.scoutdev.ga/v1/award_scheme/levels');
