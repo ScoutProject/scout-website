@@ -1,4 +1,4 @@
-<form method="POST" action="/login/" id="loginModal">
+<form method="POST" action="/login/" id="loginModal" onsubmit="this.getElementsByTagName('button')[0].disabled = true;">
 	<div>
 		<div class="modalTop">
 			SCOUT
@@ -19,7 +19,7 @@
 		</div>
 	</div>
 </form>
-<form method="POST" action="/login/" id="signupModal">
+<form method="POST" action="/login/" id="signupModal" onsubmit="this.getElementsByTagName('button')[0].disabled = true;">
 	<div>
 		<div class="modalTop">
 			SCOUT

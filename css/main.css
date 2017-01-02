@@ -443,6 +443,11 @@ nav.loggedIn #home_button {
 	text-align:center;
 	transition:all 0.2s;
 }
+#loginModal button:disabled,
+#signupModal button:disabled {
+	opacity:0.6;
+	cursor:default;
+}
 #loginModal button:hover,
 #signupModal button:hover {
 	box-shadow:0px 2px 0px rgba(0,0,0,.3);
