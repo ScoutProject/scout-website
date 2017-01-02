@@ -18,6 +18,11 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule  ^award-scheme(.*)\?*$  /pages/award-scheme.php/$1   [QSA]
 
+#Profile pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule  ^profile(.*)\?*$  /pages/profile.php/$1   [QSA]
+
 # Pesky trailing slashes
 RewriteCond   %{REQUEST_URI}        !(/$|\.)
 RewriteRule   (.*)                  %{REQUEST_URI}/              [R=301,L]

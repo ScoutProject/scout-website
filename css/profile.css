@@ -1,0 +1,142 @@
+main {
+	width:100%;
+}
+#profile_container {
+	width:1170px;
+	margin:40px auto 20px auto;
+	position:relative;
+	box-sizing:border-box;
+}
+.section {
+	background-color:#FFF;
+	margin-bottom:20px;
+	box-sizing:border-box;
+	padding:10px 15px;
+	position:relative;
+}
+
+@media screen and (min-width: 1200px) {
+	#profile_container {
+		width:1170px;
+	}
+}
+@media screen and (max-width: 1200px) {
+	#profile_container {
+		width:970px;
+	}
+}
+@media screen and (max-width: 992px) {
+	#profile_container {
+		width:750px;
+		display:block;
+		margin:10px auto 0 auto;
+	}
+	.section {
+		margin-bottom:10px;
+	}
+}
+@media screen and (max-width: 768px) {
+	#profile_container {
+		width:100%;
+	}
+}
+
+#profile_edit_link {
+	position:absolute;
+	top:0;
+	left:0;
+	margin:5px;
+	padding:5px;
+	height:24px;
+	display:flex;
+	align-items:center;
+	text-decoration:none;
+	color:#555;
+	fill:#555;
+	font-weight:bold;
+	max-width:24px;
+	overflow:hidden;
+	white-space:nowrap;
+	transition:max-width 0.2s;
+}
+#profile_edit_link svg {
+	flex-shrink:0;
+	padding-right:5px;
+}
+#profile_edit_link:hover {
+	max-width:130px;
+}
+#profile_image {
+	height:200px;
+	width:200px;
+	object-fit:cover;
+	display:block;
+	margin:0 auto;
+}
+#profile_name {
+	font-weight:bold;
+	font-size:40px;
+	display:block;
+	text-align:center;
+}
+#profile_username {
+	display:block;
+	text-align:center;
+	font-size:20px;
+	color:#999;
+}
+#profile_joinDate {
+	font-size:18px;
+	display:block;
+	text-align:center;
+	color:#444;
+	padding-top:20px;
+}
+
+#profile_groups_title {
+	font-size:24px;
+	display:block;
+	font-weight:bold;
+	padding-bottom:10px;
+}
+#group_container {
+	overflow-x:auto;
+	overflow-y:hidden;
+	white-space:nowrap;
+}
+.group {
+	height:200px;
+	width:250px;
+	background-color:#EEE;
+	margin-top:50px;
+	box-sizing:border-box;
+	padding:55px 7px 5px 7px;
+	position:relative;
+	margin-right:10px;
+	display:inline-block;
+	white-space:initial;
+}
+.group_image {
+	height:100px;
+	width:100px;
+	object-fit:cover;
+	position:absolute;
+	top:-50px;
+	left:50%;
+	transform:translate(-50%);
+}
+.group_name {
+	text-decoration:none;
+	color:#000;
+	font-size:20px;
+	display:block;
+	font-weight:bold;
+	text-align:center;
+	padding-bottom:5px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.group_description {
+	font-size:16px;
+}
