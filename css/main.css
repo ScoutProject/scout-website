@@ -72,7 +72,8 @@ nav {
 	align-items:center;
 	height:70px;
 	z-index:1000;
-	/*border-bottom:2px solid rgba(0,0,0,.1);*/
+	border-bottom:2px solid rgba(0,0,0,.2);
+	background-clip:padding-box;
 }
 #home_button {
 	height:70px;
