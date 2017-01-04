@@ -46,7 +46,7 @@ if (isset($_POST['action'])) {
 		$username = $_POST['user'];
 		$raw_password = $_POST['pass'];
 
-		$result = callAPI('GET', 'http://api.scoutdev.ga/v1/login', false, $username, $raw_password);
+		$result = callAPI('GET', 'http://api.scoutdev.ml/v1/login', false, $username, $raw_password);
 		$result = json_decode($result, true);
 
 		if (empty($result['status'])) {
@@ -78,7 +78,7 @@ if (isset($_POST['action'])) {
 		$raw_password = $_POST['pass'];
 		$raw_password_repeat = $_POST['passRepeat'];
 
-		$result = callAPI('POST', 'http://api.scoutdev.ga/v1/users/new', array("user" => $username, "email" => $email, "pass" => $raw_password, "passRepeat" => $raw_password_repeat));
+		$result = callAPI('POST', 'http://api.scoutdev.ml/v1/users/new', array("user" => $username, "email" => $email, "pass" => $raw_password, "passRepeat" => $raw_password_repeat));
 		$result = json_decode($result, true);
 		
 		if (empty($result['status'])) {

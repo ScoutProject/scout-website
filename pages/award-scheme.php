@@ -7,7 +7,7 @@ if (isset($request) && $request[0] != "") {
 	if (count($request) == 3) {
 		$page = "/award-scheme/" . $request[0] . "/" . $request[1] . "/" . $request[2] . "/";
 		$pageType = "badge";
-		$badge = callAPI('GET', 'http://api.scoutdev.ga/v1/award_scheme/badges/' . $request[2]);
+		$badge = callAPI('GET', 'http://api.scoutdev.ml/v1/award_scheme/badges/' . $request[2]);
 		$badge = json_decode($badge, true);
 		if (!empty($badge['status']) || preg_replace("/[\s]/", "-", strtolower($badge['sublevel'])) != $request[1] || preg_replace("/[\s]/", "-", strtolower($badge['level'])) != $request[0]) {
 			//There was an error
@@ -19,7 +19,7 @@ if (isset($request) && $request[0] != "") {
 	} else if (count($request) == 2) {
 		$page = "/award-scheme/" . $request[0] . "/" . $request[1] . "/";
 		$pageType = "sublevel";
-		$sublevel = callAPI('GET', 'http://api.scoutdev.ga/v1/award_scheme/sublevels/' . $request[1]);
+		$sublevel = callAPI('GET', 'http://api.scoutdev.ml/v1/award_scheme/sublevels/' . $request[1]);
 		$sublevel = json_decode($sublevel, true);
 		if (!empty($sublevel['status']) || preg_replace("/[\s]/", "-", strtolower($sublevel[0]['level'])) != $request[0]) {
 			//There was an error
@@ -30,7 +30,7 @@ if (isset($request) && $request[0] != "") {
 	} else {
 		$page = "/award-scheme/" . $request[0] . "/";
 		$pageType = "level";
-		$level = callAPI('GET', 'http://api.scoutdev.ga/v1/award_scheme/levels/' . $request[0]);
+		$level = callAPI('GET', 'http://api.scoutdev.ml/v1/award_scheme/levels/' . $request[0]);
 		$level = json_decode($level, true);
 		if (!empty($level['status'])) {
 			//There was an error
@@ -61,7 +61,7 @@ if (isset($request) && $request[0] != "") {
 						<a href="#" onclick="return openAll();" id="award_scheme_openAll" title="Expand all"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg></a>
 					</div>
 					<?php
-					$result = callAPI('GET', 'http://api.scoutdev.ga/v1/award_scheme/levels');
+					$result = callAPI('GET', 'http://api.scoutdev.ml/v1/award_scheme/levels');
 					$result = json_decode($result, true);
 					
 					for ($i = 0; $i < count($result); $i++) {
@@ -71,7 +71,7 @@ if (isset($request) && $request[0] != "") {
 						<svg class="award_scheme_level_chevron" viewBox="0 0 24 24"><path style="fill:inherit;" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
 						<div class="award_scheme_sublevel_container">
 							<?php
-							$subresult = callAPI('GET', 'http://api.scoutdev.ga/v1/award_scheme/levels/' . $result[$i]['level_id']);
+							$subresult = callAPI('GET', 'http://api.scoutdev.ml/v1/award_scheme/levels/' . $result[$i]['level_id']);
 							$subresult = json_decode($subresult, true);
 							
 							for ($j = 0; $j < count($subresult); $j++) {
@@ -135,7 +135,7 @@ if (isset($request) && $request[0] != "") {
 					<div id="badge_md">
 						<?php
 						if ($loggedIn) {
-							callAPI('PUT', 'http://api.scoutdev.ga/v1/users/' . $_SESSION['id'], array("awardschemeViewed" => $badge['badge_id']), $_SESSION['user'], $_SESSION['passHash']);
+							callAPI('PUT', 'http://api.scoutdev.ml/v1/users/' . $_SESSION['id'], array("awardschemeViewed" => $badge['badge_id']), $_SESSION['user'], $_SESSION['passHash']);
 						}
 						if ($badge['image'] == NULL) {
 							echo '<div class="center"><img src="/res/badge_placeholder.png" /></div>';

@@ -43,7 +43,7 @@ session_start();
 if (isset($_COOKIE['scouta'])) {
 	$cookie_data = (array)json_decode(base64_decode($_COOKIE['scouta']));
 	
-	$result = callAPI('GET', 'http://api.scoutdev.ga/v1/login', false, $cookie_data['username'], $cookie_data['passHash']);
+	$result = callAPI('GET', 'http://api.scoutdev.ml/v1/login', false, $cookie_data['username'], $cookie_data['passHash']);
 	$result = json_decode($result, true);
 
 	if (empty($result['status'])) {

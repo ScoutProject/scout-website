@@ -111,14 +111,14 @@ function truncate($string,$length=100,$append="&hellip;") {
 					<h3>Recently Viewed</h3>
 					<div id="awardscheme_viewed_list">
 						<?php
-						$user = callAPI('GET', 'http://api.scoutdev.ga/v1/users/' . $_SESSION['id']);
+						$user = callAPI('GET', 'http://api.scoutdev.ml/v1/users/' . $_SESSION['id']);
 						$user = json_decode($user, true);
 						
 						if ($user['awardschemeViewed'] != '') {
 							$awardSchemeViewed = explode(',', $user['awardschemeViewed']);
 
 							for ($i = 0; $i < count($awardSchemeViewed); $i++) {
-								$curBadge = callAPI('GET', 'http://api.scoutdev.ga/v1/award_scheme/' . $awardSchemeViewed[$i]);
+								$curBadge = callAPI('GET', 'http://api.scoutdev.ml/v1/award_scheme/' . $awardSchemeViewed[$i]);
 								$curBadge = json_decode($curBadge, true);
 								
 								if (empty($curBadge['status'])) {
