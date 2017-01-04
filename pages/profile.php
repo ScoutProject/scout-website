@@ -28,11 +28,18 @@ if (!$loggedIn) {
 				<div class="section groups">
 					<span id="profile_groups_title"><?php if (isset($_SESSION['realName']) && $_SESSION['realName'] != '') { echo $_SESSION['realName']; } else { echo $_SESSION['user']; } ?>'s Groups</span>
 					<div id="group_container">
-						<div class="group">
-							<img class="group_image" src="/res/group_example.png" />
-							<a class="group_name" href="#" title="Monash Venturer Unit">Monash Venturer Unit</a>
-							<span class="group_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa.</span>
-						</div>
+						<a href="#" class="group_container" style="background-color:#2554a3;" ontouchstart="this.classList.toggle('hover');">
+							<div class="group">
+								<div class="group_front">
+									<img class="group_image" src="/res/group_example.png" />
+								</div>
+								<div class="group_back">
+									<span class="group_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</span>
+								</div>
+							</div>
+							<span class="group_name" title="Monash Venturer Unit">Monash Venturer Unit</span>
+							<span class="group_members">26 Members</span>
+						</a>
 					</div>
 				</div>
 			</div>
