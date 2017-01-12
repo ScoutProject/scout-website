@@ -55,6 +55,16 @@ function spinnerCheck(checkbox) {
 			//Checkbox unchecked
 			document.getElementById('spinner_all').readOnly = true;
 			document.getElementById('spinner_all').indeterminate = true;
+			var count = 0;
+			var children = document.querySelectorAll('#radio_spinner_dialog input:not(#spinner_all)');
+			for (var i = 0; i < children.length; i++) {
+				if (!children[i].checked) {
+					count++;
+				}
+			}
+			if (count == children.length) {
+				return false;
+			}
 		} else {
 			//Checkbox checked
 			var ind = false;
@@ -71,5 +81,20 @@ function spinnerCheck(checkbox) {
 				document.getElementById('spinner_all').indeterminate = false;
 			}
 		}
+	}
+	
+	//Update spinner preview
+	var labels = document.querySelectorAll('#radio_spinner_dialog input:checked + label');
+	var otherLabels = document.querySelectorAll('#radio_spinner_dialog label');
+	if (labels.length != otherLabels.length) {
+		var previewArray = [];
+		for (var i = 0; i < labels.length; i++) {
+			previewArray[i] = labels[i].innerHTML;
+		}
+		document.querySelector('#radio_spinner > span').innerHTML = previewArray.join(', ');
+		document.querySelector('#radio_spinner > span').title = previewArray.join(', ');
+	} else {
+		document.querySelector('#radio_spinner > span').innerHTML = 'All';
+		document.querySelector('#radio_spinner > span').title = 'All';
 	}
 }
