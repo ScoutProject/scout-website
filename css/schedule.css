@@ -1,0 +1,205 @@
+main {
+	width:100%;
+}
+
+#schedule_top {
+	background-color:#009688;
+}
+
+#schedule_container,
+#schedule_tabs_container {
+	width:1170px;
+	margin:0 auto;
+	position:relative;
+	box-sizing:border-box;
+	padding:10px 15px;
+}
+#schedule_container {
+	padding-bottom:30px;
+	padding-top:40px;
+}
+#schedule_tabs_container {
+	padding-top:30px;
+	padding-bottom:0;
+}
+
+@media screen and (min-width: 1200px) {
+	#schedule_container,
+	#schedule_tabs_container {
+		width:1170px;
+	}
+}
+@media screen and (max-width: 1200px) {
+	#schedule_container,
+	#schedule_tabs_container {
+		width:970px;
+	}
+}
+@media screen and (max-width: 992px) {
+	#schedule_container,
+	#schedule_tabs_container {
+		width:750px;
+		display:block;
+	}
+	#schedule_container {
+		padding-bottom:20px;
+	}
+	#schedule_tabs_container {
+		padding-top:20px;
+	}
+}
+@media screen and (max-width: 768px) {
+	#schedule_container,
+	#schedule_tabs_container {
+		width:100%;
+	}
+}
+
+h2 {
+	font-size:30px;
+	display:block;
+	font-weight:bold;
+	margin:0;
+	color:#FFF;
+	padding-bottom:10px;
+}
+
+#radio_spinner_wrapper {
+	display:flex;
+	margin-bottom:20px;
+}
+label[for='radio_spinner'] {
+	color:#FFF;
+	font-weight:bold;
+	padding-right:5px;
+}
+#radio_spinner {
+	border-bottom:2px solid #FFF;
+	display:inline-block;
+	color:#FFF;
+	cursor:pointer;
+	position:relative;
+	max-width:300px;
+	padding-right:30px;
+	padding-left:3px;
+	box-sizing:border-box;
+	white-space:nowrap;
+}
+#radio_spinner > span {
+	display:inline-block;
+	max-width:100%;
+	white-space:nowrap;
+	width:100%;
+	overflow:hidden;
+	box-sizing:border-box;
+	text-overflow:ellipsis;
+	vertical-align:top;
+}
+#radio_spinner svg {
+	fill:#FFF;
+	position:absolute;
+	top:50%;
+	right:0;
+	height:24px;
+	width:24px;
+	transform:translateY(-50%);
+}
+#radio_spinner_dialog {
+	position:absolute;
+	top:-5px;
+	left:0px;
+	background-color:#FFF;
+	color:#000;
+	min-width:200px;
+	box-sizing:border-box;
+	padding:5px 0;
+	z-index:500;
+	box-shadow:0 2px 5px rgba(0,0,0,.5);
+	border-radius:3px;
+	cursor:default;
+	max-width:300px;
+	transition:all 0.1s;
+	transform:scale(0.9) translateY(-10px);
+	opacity:0;
+	pointer-events:none;
+}
+@media screen and (max-width: 400px) {
+	#radio_spinner_dialog {
+		max-width:250px;
+	}
+	#radio_spinner {
+		max-width:250px;
+	}
+}
+#radio_spinner_dialog.open {
+	pointer-events:all;
+	opacity:1;
+	transform:none;
+}
+#radio_spinner_dialog span {
+	display:block;
+	white-space:nowrap;
+	padding:2px 7px;
+	box-sizing:border-box;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+#radio_spinner_dialog label {
+	white-space:nowrap;
+	cursor:pointer;
+	padding-left:5px;
+}
+#radio_spinner_dialog input {
+	cursor:pointer;
+}
+#radio_spinner_dialog .radio_spinner_div {
+	height:1px;
+	background-color:#e5e5e5;
+	margin:5px 0;
+}
+
+#tabs {
+	display:flex;
+}
+#tabs a {
+	background-color:rgba(0,0,0,.5);
+	color:#FFF;
+	opacity:0.6;
+	text-decoration:none;
+	transition:opacity 0.2s;
+	font-size:16px;
+	padding:10px 15px;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+	display:inline-block;
+	margin-left:4px;
+}
+#tabs a:first-child {
+	margin-left:0;
+}
+#tabs a:hover {
+	opacity:1;
+}
+#tabs a.active {
+	background-color:#EBF2F2;
+	color:#009688;
+	opacity:1;
+	font-weight:bold;
+}
+
+#tab_settings svg {
+	height:1em;
+	width:1em;
+	fill:#FFF;
+}
+
+
+#schedule_container > div {
+	display:none;
+}
+#schedule_container.calendar #calendar {
+	display:block;
+}
+#schedule_container.agenda #agenda {
+	display:block;
+}
