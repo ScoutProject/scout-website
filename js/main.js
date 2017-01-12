@@ -65,8 +65,8 @@ function userMenu(e = null) {
 	}
 	return false;
 }
-document.getElementsByTagName('body')[0].onclick = function() {
+document.getElementsByTagName('body')[0].addEventListener("click", function() {
 	if (userMenuOpen) {
 		userMenu();
 	}
-}
+});
