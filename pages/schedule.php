@@ -31,7 +31,7 @@ if (!$loggedIn) {
 					<div id="radio_spinner_wrapper">
 						<label for="radio_spinner">From</label>
 						<div id="radio_spinner" onclick="return radioSpinner(event);">
-							<span title="Test Group with a really really Long Name">Test Group with a really really Long Name</span>
+							<span title="All">All</span>
 							<svg viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
 							<div id="radio_spinner_dialog" onclick="event.stopPropagation();">
 								<span><input name="calendar" type="checkbox" value="all" id="spinner_all" onclick="return spinnerCheck(this.value);" checked /><label for="spinner_all">All</label></span>
@@ -53,7 +53,184 @@ if (!$loggedIn) {
 			</div>
 			<div id="schedule_container" class="<?php echo $curTab; ?>">
 				<div id="calendar">
-					cal
+					<div id="cal_actions">
+						<a href="#" class="cal_action prev_month" title="Previous month"><svg viewBox="0 0 24 24"><path style="fill:inherit;" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" /></svg></a>
+						<a href="#" class="cal_action cur_day" title="Today"><svg viewBox="0 0 24 24"><path style="fill:inherit;" d="M7,10H12V15H7M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" /></svg></a>
+						<a href="#" class="cal_action next_month" title="Next month"><svg viewBox="0 0 24 24"><path style="fill:inherit;" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg></a>
+						<span id="cal_month_title">January 2017</span>
+						<span class="flex_spacer"></span>
+						<a href="#" class="cal_action new" title="New"><svg viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg></a>
+					</div>
+					<table id="cal_month">
+						<thead>
+							<tr>
+								<td>Mon</td>
+								<td>Tue</td>
+								<td>Wed</td>
+								<td>Thu</td>
+								<td>Fri</td>
+								<td>Sat</td>
+								<td>Sun</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="faded">
+									<span class="cal_month_number">26</span>
+								</td>
+								<td class="faded">
+									<span class="cal_month_number">27</span>
+									<div class="cal_events">
+										<a href="#" class="cal_event orange" title="Event">Event</a>
+									</div>
+								</td>
+								<td class="faded">
+									<span class="cal_month_number">28</span>
+								</td>
+								<td class="faded">
+									<span class="cal_month_number">29</span>
+								</td>
+								<td class="faded">
+									<span class="cal_month_number">30</span>
+								</td>
+								<td class="faded">
+									<span class="cal_month_number">31</span>
+								</td>
+								<td>
+									<span class="cal_month_number">1</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="cal_month_number">2</span>
+								</td>
+								<td>
+									<span class="cal_month_number">3</span>
+									<div class="cal_events">
+										<a href="#" class="cal_event orange" title="Event">Event</a>
+										<a href="#" class="cal_event green" title="Event">Event</a>
+										<a href="#" class="cal_event blue" title="Event">Event</a>
+									</div>
+								</td>
+								<td>
+									<span class="cal_month_number">4</span>
+								</td>
+								<td>
+									<span class="cal_month_number">5</span>
+								</td>
+								<td class="today">
+									<span class="cal_month_number">6</span>
+									<div class="cal_events">
+										<a href="#" class="cal_event purple" title="Event with a rather long title">Event with a rather long title</a>
+									</div>
+								</td>
+								<td>
+									<span class="cal_month_number">7</span>
+								</td>
+								<td>
+									<span class="cal_month_number">8</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="cal_month_number">9</span>
+								</td>
+								<td>
+									<span class="cal_month_number">10</span>
+								</td>
+								<td>
+									<span class="cal_month_number">11</span>
+									<div class="cal_events">
+										<a href="#" class="cal_event green" title="Two-day Event">Two-day Event</a>
+									</div>
+								</td>
+								<td>
+									<span class="cal_month_number">12</span>
+									<div class="cal_events">
+										<a href="#" class="cal_event green" title="Two-day Event">Two-day Event</a>
+									</div>
+								</td>
+								<td>
+									<span class="cal_month_number">13</span>
+								</td>
+								<td>
+									<span class="cal_month_number">14</span>
+								</td>
+								<td>
+									<span class="cal_month_number">15</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="cal_month_number">16</span>
+								</td>
+								<td>
+									<span class="cal_month_number">17</span>
+								</td>
+								<td>
+									<span class="cal_month_number">18</span>
+								</td>
+								<td>
+									<span class="cal_month_number">19</span>
+								</td>
+								<td>
+									<span class="cal_month_number">20</span>
+								</td>
+								<td>
+									<span class="cal_month_number">21</span>
+								</td>
+								<td>
+									<span class="cal_month_number">22</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="cal_month_number">23</span>
+								</td>
+								<td>
+									<span class="cal_month_number">24</span>
+								</td>
+								<td>
+									<span class="cal_month_number">25</span>
+								</td>
+								<td>
+									<span class="cal_month_number">26</span>
+								</td>
+								<td>
+									<span class="cal_month_number">27</span>
+								</td>
+								<td>
+									<span class="cal_month_number">28</span>
+								</td>
+								<td>
+									<span class="cal_month_number">29</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class="cal_month_number">30</span>
+								</td>
+								<td>
+									<span class="cal_month_number">31</span>
+								</td>
+								<td class="faded">
+									<span class="cal_month_number">1</span>
+								</td>
+								<td class="faded">
+									<span class="cal_month_number">2</span>
+								</td>
+								<td class="faded">
+									<span class="cal_month_number">3</span>
+								</td>
+								<td class="faded">
+									<span class="cal_month_number">4</span>
+								</td>
+								<td class="faded">
+									<span class="cal_month_number">5</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 				<div id="agenda">
 					age

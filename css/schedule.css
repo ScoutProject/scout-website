@@ -203,3 +203,256 @@ label[for='radio_spinner'] {
 #schedule_container.agenda #agenda {
 	display:block;
 }
+
+
+
+
+/* Calendar view */
+#cal_actions {
+	display:flex;
+	align-items:center;
+	padding-bottom:20px;
+}
+.cal_action {
+	height:36px;
+	width:36px;
+	fill:#666;
+	transition:fill 0.2s;
+}
+.cal_action:hover {
+	fill:#000;
+}
+.cal_action svg {
+	height:24px;
+	width:24px;
+	padding:6px;
+}
+#cal_month_title {
+	font-size:18px;
+	margin-left:20px;
+}
+
+#cal_month {
+	width:100%;
+	border-collapse:collapse;
+	table-layout:fixed;
+}
+#cal_month tbody td {
+	border:1px solid #DDD;
+	background-color:#FFF;
+	height:100px;
+	vertical-align:top;
+	width:2%;
+	position:relative;
+	box-sizing:border-box;
+	padding:0;
+}
+#cal_month tbody td.today {
+	border:1px double #444;
+	background-color:#EEE;
+}
+#cal_month tbody td .cal_events {
+	height:inherit;
+	overflow:hidden;
+	padding:24px 0 5px 0;
+	box-sizing:border-box;
+}
+
+#cal_month .cal_event {
+	width:100%;
+	width:calc(100% - 6px);
+	margin:0 auto;
+	background-color:#555;
+	color:#FFF;
+	box-sizing:border-box;
+	padding:3px 5px;
+	border-radius:2px;
+	display:block;
+	text-decoration:none;
+	margin-bottom:3px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	position:relative;
+	font-size:15px;
+}
+/*
+#cal_month .cal_event.next {
+	width:calc(100% - 3px);
+	margin:0 0 0 3px;
+	border-top-right-radius:0;
+	border-bottom-right-radius:0;
+}
+#cal_month .cal_event.prev {
+	width:calc(100% - 3px);
+	margin:0 3px 0 0;
+	border-top-left-radius:0;
+	border-bottom-left-radius:0;
+}
+#cal_month .cal_event.nextWeek {
+	border-top-right-radius:0;
+	border-bottom-right-radius:0;
+	width:calc(100% - 3px);
+	margin:0 0 0 3px;
+}
+#cal_month .cal_event.prev.nextWeek {
+	width:100%;
+	margin:0;
+}
+#cal_month .cal_event.nextWeek:after {
+	content:'';
+	position:absolute;      
+	display:block;
+	height:100%;
+	width:10px;
+	right:0;
+	top:0;
+	bottom:0;
+	background:linear-gradient(45deg, #CCC 5px, transparent 0), linear-gradient(135deg, #CCC 5px, #FFF 0);
+	background-color:transparent;
+    background-position:3px 9.7px;
+    background-repeat:repeat-y;
+    background-size:10px 9px;
+}
+*/
+/* Colours */
+#cal_month .cal_event.red {
+	background-color:#F44336;
+}
+#cal_month .cal_event.pink {
+	background-color:#E91E63;
+}
+#cal_month .cal_event.purple {
+	background-color:#9C27B0;
+}
+#cal_month .cal_event.deep_purple {
+	background-color:#673AB7;
+}
+#cal_month .cal_event.indigo {
+	background-color:#3F51B5;
+}
+#cal_month .cal_event.blue {
+	background-color:#2196F3;
+}
+#cal_month .cal_event.light_blue {
+	background-color:#03A9F4;
+	color:#000;
+}
+#cal_month .cal_event.cyan {
+	background-color:#00BCD4;
+	color:#000;
+}
+#cal_month .cal_event.teal {
+	background-color:#009688;
+}
+#cal_month .cal_event.green {
+	background-color:#4CAF50;
+	color:#000;
+}
+#cal_month .cal_event.light_green {
+	background-color:#8BC34A;
+	color:#000;
+}
+#cal_month .cal_event.lime {
+	background-color:#CDDC39;
+	color:#000;
+}
+#cal_month .cal_event.yellow {
+	background-color:#FFEB3B;
+	color:#000;
+}
+#cal_month .cal_event.amber {
+	background-color:#FFC107;
+	color:#000;
+}
+#cal_month .cal_event.orange {
+	background-color:#FF9800;
+	color:#000;
+}
+#cal_month .cal_event.deep_orange {
+	background-color:#FF5722;
+}
+#cal_month .cal_event.brown {
+	background-color:#795548;
+}
+#cal_month .cal_event.grey {
+	background-color:#9E9E9E;
+	color:#000;
+}
+#cal_month .cal_event.blue_grey {
+	background-color:#607D8B;
+}
+
+#cal_month tbody td .cal_month_number {
+	color:#000;
+	position:absolute;
+	top:2px;
+	left:5px;
+	font-size:16px;
+}
+#cal_month tbody td.faded .cal_month_number {
+	color:#BBB;
+}
+@media screen and (min-width: 1200px) {
+	#cal_month tbody td {
+		height:100px;
+	}
+}
+@media screen and (max-width: 1200px) {
+	#cal_month tbody td {
+		height:80px;
+	}
+	#cal_month tbody td .cal_events {
+		padding:22px 0 5px 0;
+	}
+	#cal_month tbody td .cal_month_number {
+		font-size:14px;
+	}
+	#cal_month .cal_event {
+		font-size:13px;
+	}
+}
+@media screen and (max-width: 992px) {
+	#cal_month tbody td {
+		height:60px;
+	}
+	#cal_month tbody td .cal_events {
+		padding:18px 0 3px 0;
+	}
+	#cal_month tbody td .cal_month_number {
+		font-size:12px;
+	}
+	#cal_month .cal_event {
+		font-size:11px;
+	}
+}
+@media screen and (max-width: 768px) {
+	#cal_month tbody td {
+		height:30px;
+	}
+	#cal_month tbody td .cal_events {
+		padding:6px 7px 0 7px;
+	}
+	#cal_month {
+		width:300px;
+		margin:0 auto;
+	}
+	#cal_month tbody td .cal_month_number {
+		font-size:10px;
+	}
+	#cal_month thead td {
+		font-size:14px;
+	}
+	#cal_month .cal_event {
+		text-indent:-9999px;
+		font-size:0px;
+		color:transparent;
+		height:5px;
+		width:5px;
+		border-radius:50%;
+		padding:0;
+		display:inline-block;
+		margin:0;
+		pointer-events:none;
+	}
+}
