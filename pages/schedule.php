@@ -59,7 +59,7 @@ if (!$loggedIn) {
 						<a href="#" class="cal_action next_month" title="Next month"><svg viewBox="0 0 24 24"><path style="fill:inherit;" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg></a>
 						<span id="cal_month_title">January 2017</span>
 						<span class="flex_spacer"></span>
-						<a href="#" class="cal_action new" title="New"><svg viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg></a>
+						<a href="#" class="cal_action new"><svg viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg> New event</a>
 					</div>
 					<table id="cal_month">
 						<thead>
@@ -201,6 +201,10 @@ if (!$loggedIn) {
 								</td>
 								<td>
 									<span class="cal_month_number">28</span>
+									<div class="cal_events">
+										<a href="#" class="cal_event pink" title="Lorem Day">Lorem Day</a>
+										<a href="#" class="cal_event yellow" title="Ipsum Night">Ipsum Night</a>
+									</div>
 								</td>
 								<td>
 									<span class="cal_month_number">29</span>
@@ -212,6 +216,9 @@ if (!$loggedIn) {
 								</td>
 								<td>
 									<span class="cal_month_number">31</span>
+									<div class="cal_events">
+										<a href="#" class="cal_event red" title="Last Day of January">Last Day of January</a>
+									</div>
 								</td>
 								<td class="faded">
 									<span class="cal_month_number">1</span>
@@ -233,7 +240,73 @@ if (!$loggedIn) {
 					</table>
 				</div>
 				<div id="agenda">
-					age
+					<div id="age_actions">
+						<span class="flex_spacer"></span>
+						<a href="#" class="age_action new"><svg viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg> New event</a>
+					</div>
+					<table id="age_container">
+						<tbody>
+							<tr>
+								<td class="age_section"><span>Today</span></td>
+								<td class="age_date"><span>6 January, 2016</span><span>6/1/2016</span></td>
+								<td class="age_event">
+									<div class="age_event_card purple">
+										<a class="age_event_title" href="#" title="Event with a rather long title">Event with a rather long title</a>
+										<span class="age_event_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.</span>
+										<a class="age_event_action share" href="#" title="Share"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z" /></svg></a><a class="age_event_action calendar" href="#" title="Add to calendar"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,19V7H5V19H19M16,1H18V3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1M11,9H13V12H16V14H13V17H11V14H8V12H11V9Z" /></svg></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="age_section" rowspan="5"><span>Upcoming</span></td>
+								<td class="age_date"><span>11 January, 2016</span><span>11/1/2016</span></td>
+								<td class="age_event">
+									<div class="age_event_card green">
+										<a class="age_event_title" href="#" title="Two-day Event">Two-day Event</a>
+										<span class="age_event_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.</span>
+										<a class="age_event_action share" href="#" title="Share"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z" /></svg></a><a class="age_event_action calendar" href="#" title="Add to calendar"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,19V7H5V19H19M16,1H18V3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1M11,9H13V12H16V14H13V17H11V14H8V12H11V9Z" /></svg></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="age_date"><span>12 January, 2016</span><span>12/1/2016</span></td>
+								<td class="age_event">
+									<div class="age_event_card green">
+										<a class="age_event_title" href="#" title="Two-day Event">Two-day Event</a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="age_date" rowspan="2"><span>28 January, 2016</span><span>28/1/2016</span></td>
+								<td class="age_event">
+									<div class="age_event_card pink">
+										<a class="age_event_title" href="#" title="Lorem Day">Lorem Day</a>
+										<span class="age_event_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+										<a class="age_event_action share" href="#" title="Share"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z" /></svg></a><a class="age_event_action calendar" href="#" title="Add to calendar"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,19V7H5V19H19M16,1H18V3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1M11,9H13V12H16V14H13V17H11V14H8V12H11V9Z" /></svg></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="age_event">
+									<div class="age_event_card yellow">
+										<a class="age_event_title" href="#" title="Ipsum Night">Ipsum Night</a>
+										<span class="age_event_description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span>
+										<a class="age_event_action share" href="#" title="Share"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z" /></svg></a><a class="age_event_action calendar" href="#" title="Add to calendar"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,19V7H5V19H19M16,1H18V3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1M11,9H13V12H16V14H13V17H11V14H8V12H11V9Z" /></svg></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="age_date"><span>31 January, 2016</span><span>31/1/2016</span></td>
+								<td class="age_event">
+									<div class="age_event_card red">
+										<a class="age_event_title" href="#" title="Last Day of January">Last Day of January</a>
+										<span class="age_event_description">Description</span>
+										<a class="age_event_action share" href="#" title="Share"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z" /></svg></a><a class="age_event_action calendar" href="#" title="Add to calendar"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M19,19V7H5V19H19M16,1H18V3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1M11,9H13V12H16V14H13V17H11V14H8V12H11V9Z" /></svg></a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</main>

@@ -217,10 +217,28 @@ label[for='radio_spinner'] {
 	height:36px;
 	width:36px;
 	fill:#666;
-	transition:fill 0.2s;
+	transition:fill 0.2s, background-color 0.2s;
+	border-radius:50%;
 }
 .cal_action:hover {
 	fill:#000;
+}
+.cal_action.new {
+	width:auto;
+	display:flex;
+	align-items:center;
+	text-decoration:none;
+	color:#666;
+	transition:fill 0.2s, color 0.2s, background-color 0.2s;
+	text-transform:uppercase;
+	border-radius:2px;
+	padding-right:12px;
+}
+.cal_action.new:hover {
+	color:#000;
+}
+.cal_action:active {
+	background-color:rgba(0,0,0,.2);
 }
 .cal_action svg {
 	height:24px;
@@ -454,5 +472,243 @@ label[for='radio_spinner'] {
 		display:inline-block;
 		margin:0;
 		pointer-events:none;
+	}
+}
+
+
+
+
+/* Agenda view */
+#age_actions {
+	display:flex;
+	align-items:center;
+	padding-bottom:20px;
+}
+.age_action {
+	height:36px;
+	width:36px;
+	fill:#666;
+	transition:fill 0.2s, background-color 0.2s;
+	border-radius:50%;
+}
+.age_action:hover {
+	fill:#000;
+}
+.age_action.new {
+	width:auto;
+	display:flex;
+	align-items:center;
+	text-decoration:none;
+	color:#666;
+	transition:fill 0.2s, color 0.2s, background-color 0.2s;
+	text-transform:uppercase;
+	border-radius:2px;
+	padding-right:12px;
+}
+.age_action.new:hover {
+	color:#000;
+}
+.age_action:active {
+	background-color:rgba(0,0,0,.2);
+}
+.age_action svg {
+	height:24px;
+	width:24px;
+	padding:6px;
+}
+
+#age_container {
+	border-collapse:collapse;
+	width:100%;
+}
+#age_container td {
+	vertical-align:top;
+}
+#age_container .age_section {
+	width:150px;
+	font-size:20px;
+}
+#age_container .age_date {
+	width:150px;
+	font-size:16px;
+	padding:4px 0;
+	color:#444;
+}
+#age_container .age_date span:nth-child(2) {
+	display:none;
+}
+#age_container .age_event {
+	padding:4px 0;
+}
+
+.age_event_card {
+	box-sizing:border-box;
+	padding:5px 7px;
+	background-color:#555;
+	color:rgba(255,255,255,.9);
+	border-radius:3px;
+	position:relative;
+	fill:#FFF;
+}
+/* Colours */
+.age_event_card.red {
+	background-color:#F44336;
+}
+.age_event_card.pink {
+	background-color:#E91E63;
+}
+.age_event_card.purple {
+	background-color:#9C27B0;
+}
+.age_event_card.deep_purple {
+	background-color:#673AB7;
+}
+.age_event_card.indigo {
+	background-color:#3F51B5;
+}
+.age_event_card.blue {
+	background-color:#2196F3;
+}
+.age_event_card.light_blue {
+	background-color:#03A9F4;
+	color:#000;
+	fill:#000;
+}
+.age_event_card.cyan {
+	background-color:#00BCD4;
+	color:#000;
+	fill:#000;
+}
+.age_event_card.teal {
+	background-color:#009688;
+}
+.age_event_card.green {
+	background-color:#4CAF50;
+	color:#000;
+	fill:#000;
+}
+.age_event_card.light_green {
+	background-color:#8BC34A;
+	color:#000;
+	fill:#000;
+}
+.age_event_card.lime {
+	background-color:#CDDC39;
+	color:#000;
+	fill:#000;
+}
+.age_event_card.yellow {
+	background-color:#FFEB3B;
+	color:#000;
+	fill:#000;
+}
+.age_event_card.amber {
+	background-color:#FFC107;
+	color:#000;
+	fill:#000;
+}
+.age_event_card.orange {
+	background-color:#FF9800;
+	color:#000;
+	fill:#000;
+}
+.age_event_card.deep_orange {
+	background-color:#FF5722;
+}
+.age_event_card.brown {
+	background-color:#795548;
+}
+.age_event_card.grey {
+	background-color:#9E9E9E;
+	color:#000;
+	fill:#000;
+}
+.age_event_card.blue_grey {
+	background-color:#607D8B;
+}
+
+.age_event_card .age_event_title {
+	text-decoration:none;
+	color:inherit;
+	font-weight:bold;
+	display:block;
+	font-size:18px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.age_event_card .age_event_description {
+	font-size:16px;
+	display:block;
+	padding-bottom:40px;
+	padding-top:5px;
+}
+.age_event_card .age_event_action {
+	display:inline-block;
+	height:36px;
+	width:36px;
+	position:absolute;
+	bottom:0;
+	opacity:0.7;
+	transition:opacity 0.2s;
+}
+.age_event_card .age_event_action:hover {
+	opacity:1;
+}
+.age_event_card .age_event_action.share {
+	left:0;
+}
+.age_event_card .age_event_action.calendar {
+	left:36px;
+}
+.age_event_card .age_event_action svg {
+	padding:6px;
+}
+
+@media screen and (max-width: 1200px) {
+	.age_event_card .age_event_title {
+		font-size:16px;
+	}
+	.age_event_card .age_event_description {
+		font-size:14px;
+	}
+}
+@media screen and (max-width: 992px) {
+	.age_event_card .age_event_title {
+		font-size:15px;
+	}
+	.age_event_card .age_event_description {
+		font-size:12px;
+	}
+	#age_container .age_section {
+		width:120px;
+		font-size:18px;
+	}
+	#age_container .age_date {
+		width:140px;
+		font-size:14px;
+	}
+}
+@media screen and (max-width: 768px) {
+	#age_container {
+		table-layout:fixed;
+	}
+	#age_container .age_section {
+		width:30px;
+	}
+	#age_container .age_section > span {
+		transform:rotate(90deg);
+		display:block;
+		padding-left:5px;
+	}
+	#age_container .age_date {
+		width:85px;
+		font-size:14px;
+	}
+	#age_container .age_date span:first-child {
+		display:none;
+	}
+	#age_container .age_date span:nth-child(2) {
+		display:inline;
 	}
 }
