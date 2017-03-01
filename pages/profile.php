@@ -20,6 +20,7 @@ if (!$loggedIn) {
 			<div id="profile_container">
 				<div class="section personal_info">
 					<a href="/profile/edit/" id="profile_edit_link"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg> Edit profile</a>
+					<!-- Logout button for non-js users --><noscript><a href="/logout/" id="profile_logout_link"><svg style="width:24px;height:24px" viewBox="0 0 24 24"><path style="fill:inherit;" d="M17,17.25V14H10V10H17V6.75L22.25,12L17,17.25M13,2A2,2 0 0,1 15,4V8H13V4H4V20H13V16H15V20A2,2 0 0,1 13,22H4A2,2 0 0,1 2,20V4A2,2 0 0,1 4,2H13Z" /></svg> Sign out</a></noscript>
 					<img id="profile_image" src="/res/avatar.png" />
 					<span id="profile_name"><?php if (isset($_SESSION['realName']) && $_SESSION['realName'] != '') { echo $_SESSION['realName']; } else { echo $_SESSION['user']; } ?></span>
 					<?php if (isset($_SESSION['realName']) && $_SESSION['realName'] != '') { ?><span id="profile_username">@<?php echo $_SESSION['user']; ?></span><?php } ?>

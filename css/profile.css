@@ -41,7 +41,8 @@ main {
 	}
 }
 
-#profile_edit_link {
+#profile_edit_link,
+#profile_logout_link {
 	position:absolute;
 	top:0;
 	left:0;
@@ -59,11 +60,16 @@ main {
 	white-space:nowrap;
 	transition:max-width 0.2s;
 }
-#profile_edit_link svg {
+#profile_logout_link {
+	top:30px;
+}
+#profile_edit_link svg,
+#profile_logout_link svg {
 	flex-shrink:0;
 	padding-right:5px;
 }
-#profile_edit_link:hover {
+#profile_edit_link:hover,
+#profile_logout_link:hover {
 	max-width:130px;
 }
 #profile_image {
