@@ -1,0 +1,108 @@
+main {
+	width:100%;
+}
+#contact_container {
+	width:1170px;
+	margin:40px auto;
+	position:relative;
+	box-sizing:border-box;
+	padding:10px 15px;
+	background-color:#FFF;
+}
+
+@media screen and (min-width: 1200px) {
+	#contact_container {
+		width:1170px;
+	}
+}
+@media screen and (max-width: 1200px) {
+	#contact_container {
+		width:970px;
+	}
+}
+@media screen and (max-width: 992px) {
+	#contact_container {
+		width:750px;
+		display:block;
+		margin:10px auto;
+	}
+}
+@media screen and (max-width: 768px) {
+	#contact_container {
+		width:100%;
+	}
+}
+
+h2 {
+	font-size:30px;
+	display:block;
+	font-weight:bold;
+	margin:0;
+}
+form table {
+	width:100%;
+}
+form table tr td:first-child {
+	padding-right:20px;
+	width:50%;
+}
+form table td {
+	vertical-align:top;
+}
+
+label {
+	display:block;
+	padding:5px 0 0 0;
+	color:#000;
+}
+input,
+textarea {
+	margin:0;
+	box-sizing:border-box;
+	width:100%;
+	font-family:inherit;
+	font-size:14px;
+	border:1px solid #e1e1e1;
+	border-radius:3px;
+	padding:5px 8px;
+	transition:background-color 0.2s;
+	resize:vertical;
+}
+input:focus,
+textarea:focus {
+	background-color:#E0F2F1;
+}
+select {
+	margin:0;
+	box-sizing:border-box;
+	font-family:inherit;
+	font-size:14px;
+	width:100%;
+	border:1px solid #e1e1e1;
+	border-radius:3px;
+	padding:5px 8px;
+	transition:border 0.2s;
+	resize:vertical;
+}
+select:focus {
+	border:1px solid #b1b1b1;
+}
+button {
+	background-color:#009688;
+	color:#FFF;
+	border:none;
+	border-radius:3px;
+	padding:10px 0;
+	font-weight:bold;
+	font-family:inherit;
+	font-size:16px;
+	margin:20px 0;
+	min-width:240px;
+	display:inline-block;
+	cursor:pointer;
+	text-align:center;
+	transition:all 0.2s;
+}
+button:hover {
+	box-shadow:0px 2px 0px rgba(0,0,0,.3);
+}
